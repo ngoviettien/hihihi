@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Call API</title>
+</head>
+<body>
+  <button onclick="callApi1()">Gọi API 1</button>
+  <button onclick="callApi2()">Gọi API 2</button>
+  <button onclick="callApi3()">Gọi API 3</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function callApi1() {
+      let res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+      let data = await res.json();
+      document.getElementById("result").innerText = JSON.stringify(data, null, 2);
+    }
+
+    async function callApi2() {
+      let res = await fetch("https://jsonplaceholder.typicode.com/posts/2");
+      let data = await res.json();
+      document.getElementById("result").innerText = JSON.stringify(data, null, 2);
+    }
+
+    async function callApi3() {
+      let res = await fetch("https://jsonplaceholder.typicode.com/posts/3");
+      let data = await res.json();
+      document.getElementById("result").innerText = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
